@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj7dt1i1kao2g"
-path="res://.godot/imported/pirate_bandana.png-e5475322289fc267742452248b068506.ctex"
+uid="uid://gcw42fi4qomw"
+path="res://.godot/imported/background.png-413061a90642a5588b6cde018723da3a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/pirate_bandana.png"
-dest_files=["res://.godot/imported/pirate_bandana.png-e5475322289fc267742452248b068506.ctex"]
+source_file="res://scenes/Andy/background.png"
+dest_files=["res://.godot/imported/background.png-413061a90642a5588b6cde018723da3a.ctex"]
 
 [params]
 

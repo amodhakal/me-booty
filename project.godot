@@ -11,5 +11,5 @@ config_version=5
 [application]
 
 config/name="Me Booty"
+run/main_scene="res://scenes/Andy/level_andy.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://images/icon.svg"
