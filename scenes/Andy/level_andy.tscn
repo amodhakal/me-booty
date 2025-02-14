@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ceehl53gxalh"]
 
-[ext_resource type="Texture2D" uid="uid://c2bhmjvd756qt" path="res://images/Andy/background.png" id="1_7yk7o"]
+[ext_resource type="Texture2D" uid="uid://c530c3vmybcxl" path="res://images/Andy/background.jpg" id="1_4m2xl"]
 
 [node name="Level_Andy" type="Node"]
 
@@ -21,4 +21,4 @@ offset_top = -188.0
 offset_bottom = 188.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_7yk7o")
+texture = ExtResource("1_4m2xl")
