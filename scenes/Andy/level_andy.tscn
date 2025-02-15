@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtmcplfinjoia"]
+
+[ext_resource type="Texture2D" uid="uid://c530c3vmybcxl" path="res://images/Andy/background.jpg" id="1_4m2xl"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -16.0
+offset_top = -18.0
+offset_right = 1172.0
+offset_bottom = 662.0
+texture = ExtResource("1_4m2xl")
+expand_mode = 2
