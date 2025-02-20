@@ -15,12 +15,11 @@ jobs:
         with:
           lfs: true
 
-      - name: Build Godot project
-        uses: manleydev/build-godot-action@v1.4.1
+      - name: Setup Godot
+        uses: godot-ci/godot-export@v3
         with:
-          preset: Web
-          name: web-build
-          projectDir: .
+          godot_version: 4.2.1
+          export_preset_name: Web
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
