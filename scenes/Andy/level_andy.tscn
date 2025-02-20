@@ -1,19 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtmcplfinjoia"]
+[gd_scene load_steps=8 format=3 uid="uid://dtmcplfinjoia"]
 
 [ext_resource type="Texture2D" uid="uid://c530c3vmybcxl" path="res://images/Andy/background.jpg" id="1_4m2xl"]
 [ext_resource type="Script" path="res://scripts/Andy/level_andy.gd" id="1_koisx"]
+[ext_resource type="FontFile" uid="uid://c1h4k12aq4c5u" path="res://fonts/SairaStencilOne-Regular.ttf" id="3_l2nl6"]
+[ext_resource type="Texture2D" uid="uid://2t62bdxf4rge" path="res://images/Andy/frame.png" id="3_y1qag"]
 [ext_resource type="Texture2D" uid="uid://c4gd04h5xwh6l" path="res://images/Andy/lantern.png" id="3_ylqfb"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_frmj3"]
-font_size = 24
 
 [sub_resource type="LabelSettings" id="LabelSettings_ssf1s"]
 font_size = 56
 font_color = Color(1, 0, 0, 1)
 outline_size = 10
 
+[sub_resource type="LabelSettings" id="LabelSettings_frmj3"]
+font = ExtResource("3_l2nl6")
+font_size = 42
+
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_koisx")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 90.0
+one_shot = true
 
 [node name="Background" type="TextureRect" parent="."]
 offset_left = -16.0
@@ -22,21 +30,6 @@ offset_right = 1172.0
 offset_bottom = 662.0
 texture = ExtResource("1_4m2xl")
 expand_mode = 2
-
-[node name="Timer" type="Timer" parent="."]
-process_callback = 0
-wait_time = 90.0
-one_shot = true
-
-[node name="TimerLabel" type="Label" parent="."]
-offset_left = 1079.0
-offset_top = 6.0
-offset_right = 1140.0
-offset_bottom = 40.0
-text = "01:30
-"
-label_settings = SubResource("LabelSettings_frmj3")
-horizontal_alignment = 2
 
 [node name="GameOverLabel" type="Label" parent="."]
 offset_right = 1146.0
@@ -54,15 +47,27 @@ label_settings = SubResource("LabelSettings_ssf1s")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TimerLabel" type="Label" parent="."]
+offset_left = 29.0
+offset_top = 28.0
+offset_right = 90.0
+offset_bottom = 62.0
+text = "1:30
+"
+label_settings = SubResource("LabelSettings_frmj3")
+
+[node name="Frame" type="Sprite2D" parent="."]
+position = Vector2(76.1249, 153)
+scale = Vector2(0.0927501, 0.0731364)
+texture = ExtResource("3_y1qag")
+
 [node name="TargetDisplay" type="TextureRect" parent="."]
-offset_left = 2.0
-offset_top = 14.0
-offset_right = 477.0
-offset_bottom = 213.0
+offset_left = 42.1249
+offset_top = 116.0
+offset_right = 112.125
+offset_bottom = 186.0
 texture = ExtResource("3_ylqfb")
 expand_mode = 3
 stretch_mode = 4
-
-[node name="GameObjects" type="Node2D" parent="."]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
