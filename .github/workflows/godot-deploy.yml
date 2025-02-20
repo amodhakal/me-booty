@@ -16,7 +16,7 @@ jobs:
           lfs: true
 
       - name: Setup Godot
-        uses: godot-ci/godot-export@v3
+        uses: godot-ci/godot-export@v3.1.0
         with:
           godot_version: 4.2.1
           export_preset_name: Web
