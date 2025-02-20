@@ -1,0 +1,29 @@
+name: Godot Build and Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          lfs: true
+
+      - name: Build Godot project
+        uses: manleydev/build-godot-action@v1.4.1
+        with:
+          preset: Web
+          export_path: build
+          project_path: .
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2
+        with:
+          artifact_name: web-build
+          folder: build/web
