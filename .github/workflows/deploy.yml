@@ -36,6 +36,12 @@ jobs:
           mkdir -p build/web
           godot --headless --verbose --export-release "Web" ./build/web/index.html
 
+      - name: Add coop headers
+        run: |
+          cd build/web
+          echo 'Cross-Origin-Embedder-Policy: require-corp' > _headers
+          echo 'Cross-Origin-Opener-Policy: same-origin' >> _headers
+
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:

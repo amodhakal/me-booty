@@ -131,4 +131,5 @@ func handleWin():
 	# TODO: Show to the next level or something
 	gameWonLabel.show()
 	timeLabel.hide()
+	targetDisplay.hide()
 	time.stop()
