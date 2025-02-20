@@ -19,8 +19,8 @@ jobs:
         uses: manleydev/build-godot-action@v1.4.1
         with:
           preset: Web
-          export_path: build
-          project_path: .
+          name: web-build
+          projectDir: .
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
