@@ -1,0 +1,41 @@
+name: "Build and Deploy to GitHub Pages"
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  GODOT_VERSION: "4.3-stable"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    container:
+      image: barichello/godot-ci:${{ env.GODOT_VERSION }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup export templates
+        run: |
+          mkdir -p ~/.local/share/godot/export_templates/${{ env.GODOT_VERSION }}.stable
+          mv /root/.local/share/godot/export_templates/${{ env.GODOT_VERSION }}.stable/* ~/.local/share/godot/export_templates/${{ env.GODOT_VERSION }}.stable
+
+      - name: Web Build
+        run: |
+          mkdir -p build/web
+          godot --headless --verbose --export-release "Web" ./build/web/index.html
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/web
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        permissions:
+          pages: write
+          id-token: write
