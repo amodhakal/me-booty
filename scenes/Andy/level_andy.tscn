@@ -38,8 +38,6 @@ text = "01:30
 label_settings = SubResource("LabelSettings_frmj3")
 horizontal_alignment = 2
 
-[node name="GameObjects" type="Node2D" parent="."]
-
 [node name="GameOverLabel" type="Label" parent="."]
 offset_right = 1146.0
 offset_bottom = 641.0
@@ -64,5 +62,7 @@ offset_bottom = 213.0
 texture = ExtResource("3_ylqfb")
 expand_mode = 3
 stretch_mode = 4
+
+[node name="GameObjects" type="Node2D" parent="."]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

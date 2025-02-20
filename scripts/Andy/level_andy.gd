@@ -1,5 +1,5 @@
 # TODO: Fix timer not updating label properly
-# TODO: Prevent sprites from being on top of each other
+# TODO: Prevent sprites from being on top of each other, and the labels
 
 extends Node2D
 
@@ -35,6 +35,13 @@ func _ready() -> void:
 	gameWonLabel.hide()
 	addInitialAssets()
 	time.start()
+	
+func _process(delta: float) -> void:
+	updateTimerLabel()
+	
+# Run when the timer times out, 90 seconds
+func _on_timer_timeout():
+	handleLoss()
 
 # Initially add assets
 func addInitialAssets():
@@ -90,13 +97,21 @@ func _on_object_clicked(viewport, event, shape_idx, area, object):
 # Update the timer label to show the remaining time
 func updateTimerLabel():
 	var secondsRemaining = ceil(time.time_left)
-	if secondsRemaining <= 9:
+	
+	if ( secondsRemaining <= 9):
 		timeLabel.text = "0:0" + str(secondsRemaining)
-	elif secondsRemaining <= 59:
+		return
+	
+	if (secondsRemaining <= 59):
 		timeLabel.text = "0:" + str(secondsRemaining)
-	else:
-		secondsRemaining -= 60
-		timeLabel.text = "1:" + ("0" + str(secondsRemaining) if secondsRemaining <= 9 else str(secondsRemaining))
+		return
+		
+	secondsRemaining -= 60
+	if ( secondsRemaining <= 9 ):
+		timeLabel.text = "1:0" + str(secondsRemaining)
+		return
+		
+	timeLabel.text = "1:" + str(secondsRemaining)
 
 func updateTargetDisplay():
 	if objectsInGame.size() > 0:
@@ -107,6 +122,7 @@ func updateTargetDisplay():
 # Handle losing the game
 func handleLoss():
 	gameOverLabel.show()
+	timeLabel.hide()
 	time.stop()
 
 	
@@ -114,4 +130,5 @@ func handleLoss():
 func handleWin():
 	# TODO: Show to the next level or something
 	gameWonLabel.show()
+	timeLabel.hide()
 	time.stop()
