@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtmcplfinjoia"]
+
+[ext_resource type="Script" path="res://scripts/Andy/title_screen.gd" id="1_m3naa"]
+[ext_resource type="Texture2D" uid="uid://c530c3vmybcxl" path="res://images/Andy/background.jpg" id="2_5oj56"]
+[ext_resource type="FontFile" uid="uid://c1h4k12aq4c5u" path="res://fonts/SairaStencilOne-Regular.ttf" id="3_3lwts"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mp2rt"]
+font = ExtResource("3_3lwts")
+font_size = 78
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Node2D"]
+script = ExtResource("1_m3naa")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = -16.0
+offset_top = -18.0
+offset_right = 1172.0
+offset_bottom = 662.0
+texture = ExtResource("2_5oj56")
+expand_mode = 2
+
+[node name="Title" type="Label" parent="."]
+offset_left = -1.0
+offset_right = 1150.0
+offset_bottom = 644.0
+text = "Me Booty"
+label_settings = SubResource("LabelSettings_mp2rt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartGameButton" type="Button" parent="."]
+offset_left = 456.0
+offset_top = 373.0
+offset_right = 672.0
+offset_bottom = 430.0
+theme_override_fonts/font = ExtResource("3_3lwts")
+theme_override_font_sizes/font_size = 30
+text = "Start Game"
+
+[connection signal="pressed" from="StartGameButton" to="." method="_on_start_game_button_pressed"]

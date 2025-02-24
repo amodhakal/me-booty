@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtmcplfinjoia"]
+[gd_scene load_steps=8 format=3 uid="uid://crn2tibke7vqf"]
 
 [ext_resource type="Texture2D" uid="uid://c530c3vmybcxl" path="res://images/Andy/background.jpg" id="1_4m2xl"]
 [ext_resource type="Script" path="res://scripts/Andy/level_andy.gd" id="1_koisx"]
@@ -30,14 +30,6 @@ offset_right = 1172.0
 offset_bottom = 662.0
 texture = ExtResource("1_4m2xl")
 expand_mode = 2
-
-[node name="GameOverLabel" type="Label" parent="."]
-offset_right = 1146.0
-offset_bottom = 641.0
-text = "Game Over"
-label_settings = SubResource("LabelSettings_ssf1s")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="GameWonLabel" type="Label" parent="."]
 offset_right = 1146.0

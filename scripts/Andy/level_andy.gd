@@ -4,7 +4,6 @@ extends Node2D
 @onready var timeLabel = $TimerLabel
 @onready var targetDisplay = $TargetDisplay
 @onready var targetFrame = $Frame
-@onready var gameOverLabel = $GameOverLabel
 @onready var gameWonLabel = $GameWonLabel
 
 # A list of all the hidden objects' textures
@@ -28,7 +27,7 @@ var targetIndex = 0
 const MAX_IMAGE_SIZE = Vector2(60, 60)
 
 func _ready() -> void:
-	gameOverLabel.hide()
+	print("Andy's level reached")
 	gameWonLabel.hide()
 	addInitialAssets()
 	time.start()
@@ -151,11 +150,12 @@ func handleEnd():
 
 # Handle losing the game
 func handleLoss():
-	gameOverLabel.show()
 	handleEnd()
 
 	for object in objectsInGame:
 		object.hide()
+		
+	get_tree().change_scene_to_file("res://scenes/Andy/defeat_screen.tscn")
 
 # Handle winning the game
 func handleWin():
