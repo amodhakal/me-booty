@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0tdb1x4cbd2q"
-path="res://.godot/imported/TheBrig.webp-b258822e51125e92c3535f5d8643fb92.ctex"
+uid="uid://bj34yo8js14tu"
+path="res://.godot/imported/sword.png-0676953486ca2d9b298c76e357e92e5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Muzamani/TheBrig.webp"
-dest_files=["res://.godot/imported/TheBrig.webp-b258822e51125e92c3535f5d8643fb92.ctex"]
+source_file="res://images/Garrison/sword.png"
+dest_files=["res://.godot/imported/sword.png-0676953486ca2d9b298c76e357e92e5d.ctex"]
 
 [params]
 

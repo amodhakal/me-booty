@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://85okdmg4llxk"
-path="res://.godot/imported/TheBrig.webp-4cab733599d269271174e20c35c66d64.ctex"
+uid="uid://bs1qe14ygcglj"
+path="res://.godot/imported/diamond.png-72185ebbf87320bb5c5efce555710880.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Muzamani/TheBrig.webp"
-dest_files=["res://.godot/imported/TheBrig.webp-4cab733599d269271174e20c35c66d64.ctex"]
+source_file="res://images/Garrison/diamond.png"
+dest_files=["res://.godot/imported/diamond.png-72185ebbf87320bb5c5efce555710880.ctex"]
 
 [params]
 

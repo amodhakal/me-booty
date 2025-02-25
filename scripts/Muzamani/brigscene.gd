@@ -6,15 +6,16 @@ extends Node2D
 @onready var targetFrame = $Frame
 @onready var gameWonLabel = $GameWonLabel
 
-# A list of all the hidden objects' textures
+# A list of all the hidden objects' textures 
 var textures = [
-	preload("res://images/Andy/lantern.png"),
-	preload("res://images/Andy/map.png"),
-	preload("res://images/Andy/scroll.png"),
-	preload("res://images/Andy/ship.png"),
-	preload("res://images/Andy/skull.png"),
-	preload("res://images/Andy/sword.png"),
-	preload("res://images/Andy/treasure.png"),
+	preload("res://images/Muzamani/birdcage.png"),
+	preload("res://images/Muzamani/brigmap.png"),
+	preload("res://images/Muzamani/brigpistol.png"),
+	preload("res://images/Muzamani/compass.png"),
+	preload("res://images/Muzamani/eyepatch.png"),
+	preload("res://images/Muzamani/goldoubloons.png"),
+	preload("res://images/Muzamani/pirateflag.png"),
+	preload("res://images/Muzamani/prisonfood.png"),
 ]
 
 # The objects that are currently in-game
@@ -27,7 +28,7 @@ var targetIndex = 0
 const MAX_IMAGE_SIZE = Vector2(60, 60)
 
 func _ready() -> void:
-	print("Andy's level reached")
+	print("Muzamani's level reached")
 	gameWonLabel.hide()
 	addInitialAssets()
 	time.start()
@@ -35,7 +36,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	updateTimerLabel()
 
-# Run when the timer times out, 90 seconds
+# Run when the timer times out (90 seconds)
 func _on_timer_timeout():
 	handleLoss()
 
@@ -43,13 +44,12 @@ func _on_timer_timeout():
 func addInitialAssets():
 	var timeLabelRect = Rect2(timeLabel.get_global_transform().origin, timeLabel.size)
 	var targetDisplayRect = Rect2(targetDisplay.get_global_transform().origin, targetDisplay.size)
-
+	
 	var targetFrameTexture = targetFrame.texture
 	var targetFrameSize = Vector2.ZERO
 	if targetFrameTexture: # Check if texture is loaded
 		targetFrameSize = targetFrameTexture.get_size() * targetFrame.scale
 	var targetFrameRect = Rect2(targetFrame.get_global_transform().origin - targetFrameSize / 2, targetFrameSize)
-
 
 	var ui_rects_to_avoid = [timeLabelRect, targetDisplayRect, targetFrameRect]
 
@@ -101,7 +101,7 @@ func addInitialAssets():
 # Handles clicking on objects
 func _on_object_clicked(viewport, event, shape_idx, area, object):
 	if event is InputEventMouseButton and event.pressed:
-		# Player loses if click the wrong item
+		# Player loses if they click the wrong item
 		var correctObject = objectsInGame[targetIndex]
 		if correctObject != object:
 			handleLoss()
@@ -116,16 +116,16 @@ func _on_object_clicked(viewport, event, shape_idx, area, object):
 func updateTimerLabel():
 	var secondsRemaining = ceil(time.time_left)
 
-	if ( secondsRemaining <= 9):
+	if secondsRemaining <= 9:
 		timeLabel.text = "0:0" + str(secondsRemaining)
 		return
 
-	if (secondsRemaining <= 59):
+	if secondsRemaining <= 59:
 		timeLabel.text = "0:" + str(secondsRemaining)
 		return
 
 	secondsRemaining -= 60
-	if ( secondsRemaining <= 9 ):
+	if secondsRemaining <= 9:
 		timeLabel.text = "1:0" + str(secondsRemaining)
 		return
 
@@ -148,18 +148,15 @@ func handleEnd():
 	targetDisplay.hide()
 	time.stop()
 
-# Handle losing the game
+# Handle losing the game (using Muzamani defeat screen)
 func handleLoss():
 	handleEnd()
-
 	for object in objectsInGame:
 		object.hide()
-		
-	get_tree().change_scene_to_file("res://scenes/Andy/defeat_screen.tscn")
+	get_tree().change_scene_to_file("res://scenes/Muzamani/brig_defeat.tscn")
 
-# Handle winning the game
+# Handle winning the game – now transitioning to your next level (or victory screen)
 func handleWin():
-	# Show to the next level or something
 	gameWonLabel.show()
 	handleEnd()
-	get_tree().change_scene_to_file("res://scenes/Muzamani/brigscene.tscn")
+	

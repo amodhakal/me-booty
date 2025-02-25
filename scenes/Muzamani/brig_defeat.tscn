@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7g0wfp8tycpd"]
+
+[ext_resource type="Texture2D" uid="uid://bicu8uxeu7uh3" path="res://images/Muzamani/TheBrig.png" id="1_2t40y"]
+[ext_resource type="Script" path="res://scripts/Muzamani/brig_defeat.gd" id="1_afo15"]
+[ext_resource type="FontFile" uid="uid://c1h4k12aq4c5u" path="res://fonts/SairaStencilOne-Regular.ttf" id="2_veyku"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hxlif"]
+font = ExtResource("2_veyku")
+font_size = 78
+font_color = Color(1, 0, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="BrigDefeat" type="Node2D"]
+script = ExtResource("1_afo15")
+
+[node name="TheBrig" type="TextureRect" parent="."]
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 1026.0
+offset_bottom = 1025.0
+scale = Vector2(1.125, 0.632813)
+texture = ExtResource("1_2t40y")
+
+[node name="Title" type="Label" parent="."]
+offset_left = -1.0
+offset_right = 1150.0
+offset_bottom = 644.0
+text = "You lost"
+label_settings = SubResource("LabelSettings_hxlif")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartGameButton" type="Button" parent="."]
+offset_left = 456.0
+offset_top = 373.0
+offset_right = 672.0
+offset_bottom = 430.0
+theme_override_fonts/font = ExtResource("2_veyku")
+theme_override_font_sizes/font_size = 30
+text = "Restart Game"

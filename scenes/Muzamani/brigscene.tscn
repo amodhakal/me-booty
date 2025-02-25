@@ -1,19 +1,62 @@
-[gd_scene load_steps=4 format=3 uid="uid://cp535jilsrdhh"]
+[gd_scene load_steps=8 format=3 uid="uid://d0wqhj2kbuc5t"]
 
-[ext_resource type="Texture2D" uid="uid://b0tdb1x4cbd2q" path="res://TheBrig.webp" id="1_o70ft"]
-[ext_resource type="Texture2D" uid="uid://cumpga8nrvoiu" path="res://icon.svg" id="2_igoup"]
-[ext_resource type="Script" path="res://icon.gd" id="3_w0nkp"]
+[ext_resource type="Script" path="res://scripts/Muzamani/brigscene.gd" id="1_eyg23"]
+[ext_resource type="Texture2D" uid="uid://bicu8uxeu7uh3" path="res://images/Muzamani/TheBrig.png" id="1_fmu1h"]
+[ext_resource type="Texture2D" uid="uid://c4gd04h5xwh6l" path="res://images/Andy/lantern.png" id="2_ukvxc"]
+[ext_resource type="Texture2D" uid="uid://2t62bdxf4rge" path="res://images/Andy/frame.png" id="3_ny22f"]
+[ext_resource type="FontFile" uid="uid://c1h4k12aq4c5u" path="res://fonts/SairaStencilOne-Regular.ttf" id="4_j0712"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="LabelSettings" id="LabelSettings_qnfb3"]
+font_size = 56
+font_color = Color(1, 0, 0, 1)
+outline_size = 10
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[sub_resource type="LabelSettings" id="LabelSettings_y6ejy"]
+font = ExtResource("4_j0712")
+font_size = 42
 
-[node name="TheBrig" type="Sprite2D" parent="ParallaxBackground"]
-position = Vector2(576.5, 325)
-scale = Vector2(1.12598, 0.634766)
-texture = ExtResource("1_o70ft")
+[node name="BrigScene" type="Node2D"]
+script = ExtResource("1_eyg23")
 
-[node name="Icon" type="Sprite2D" parent="ParallaxBackground"]
-position = Vector2(984, 514)
-texture = ExtResource("2_igoup")
-script = ExtResource("3_w0nkp")
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 90.0
+one_shot = true
+
+[node name="TheBrig" type="TextureRect" parent="."]
+offset_top = -2.0
+offset_right = 1027.0
+offset_bottom = 1025.0
+scale = Vector2(1.125, 0.632813)
+texture = ExtResource("1_fmu1h")
+
+[node name="GameWonLabel" type="Label" parent="."]
+offset_right = 1146.0
+offset_bottom = 641.0
+text = "You won!!!"
+label_settings = SubResource("LabelSettings_qnfb3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Frame" type="Sprite2D" parent="."]
+position = Vector2(76.1249, 153)
+scale = Vector2(0.0927501, 0.0731364)
+texture = ExtResource("3_ny22f")
+
+[node name="TimerLabel" type="Label" parent="."]
+offset_left = 29.0
+offset_top = 28.0
+offset_right = 90.0
+offset_bottom = 62.0
+text = "1:30
+"
+label_settings = SubResource("LabelSettings_y6ejy")
+
+[node name="TargetDisplay" type="TextureRect" parent="."]
+offset_left = 44.0
+offset_top = 114.0
+offset_right = 114.0
+offset_bottom = 184.0
+texture = ExtResource("2_ukvxc")
+expand_mode = 3
+stretch_mode = 4
