@@ -62,7 +62,6 @@ var targetIndex = 0
 const MAX_IMAGE_SIZE = Vector2(60, 60)
 
 func _ready() -> void:
-	print("Andy's level reached")
 	gameWonLabel.hide()
 	addInitialAssets()
 	
