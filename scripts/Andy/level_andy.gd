@@ -7,17 +7,42 @@ extends Node2D
 @onready var gameWonLabel = $GameWonLabel
 
 # A list of all the hidden objects' textures
-var textures = [
-	preload("res://images/Andy/lantern.png"),
-	preload("res://images/Andy/map.png"),
-	preload("res://images/Andy/scroll.png"),
-	preload("res://images/Andy/ship.png"),
-	preload("res://images/Andy/skull.png"),
-	preload("res://images/Andy/sword.png"),
-	preload("res://images/Andy/treasure.png"),
+var urls = [
+	"res://images/Andy/lantern.png",
+	"res://images/Andy/map.png",
+	"res://images/Andy/scroll.png",
+	"res://images/Andy/ship.png",
+	"res://images/Andy/skull.png",
+	"res://images/Andy/sword.png",
+	"res://images/Andy/treasure.png",
+	"res://images/Garrison/amulet_transparent.png",
+	"res://images/Garrison/apple_transparent.png",
+	"res://images/Garrison/bandana_transparent.png",
+	"res://images/Garrison/blueprint_transparent.png",
+	"res://images/Garrison/cannonball_transparent.png",
+	"res://images/Garrison/dagger_transparent.png",
+	"res://images/Garrison/diamond_transparent.png",
+	"res://images/Garrison/doubloon_transparent.png",
+	"res://images/Garrison/elixir_transparent.png",
+	"res://images/Garrison/fools_gold_transparent.png",
+	"res://images/Garrison/golden_apple_transparent.png",
+	"res://images/Garrison/key_transparent.png",
+	"res://images/Garrison/map_transparent.png",
+	"res://images/Garrison/marbles_transparent.png",
+	"res://images/Garrison/pearl_transparent.png",
+	"res://images/Garrison/pineapple_transparent.png",
+	"res://images/Garrison/pistol_transparent.png",
+	"res://images/Garrison/poisoned_rum_transparent.png",
+	"res://images/Garrison/rotten_apple_transparent.png",
+	"res://images/Garrison/rotten_pineapple_transparent.png",
+	"res://images/Garrison/ruby_transparent.png",
+	"res://images/Garrison/rum_transparent.png",
+	"res://images/Garrison/sapphire_transparent.png",
+	"res://images/Garrison/silver_transparent.png",
+	"res://images/Garrison/sword_transparent.png",
 ]
 
-# The objects that are currently in-game
+# The objects that are currently in-game (stores Sprite2D nodes)
 var objectsInGame = []
 
 # Current target index
@@ -30,7 +55,6 @@ func _ready() -> void:
 	print("Andy's level reached")
 	gameWonLabel.hide()
 	addInitialAssets()
-	time.start()
 
 func _process(delta: float) -> void:
 	updateTimerLabel()
@@ -41,6 +65,7 @@ func _on_timer_timeout():
 
 # Initially add assets
 func addInitialAssets():
+	urls.shuffle()
 	var timeLabelRect = Rect2(timeLabel.get_global_transform().origin, timeLabel.size)
 	var targetDisplayRect = Rect2(targetDisplay.get_global_transform().origin, targetDisplay.size)
 
@@ -50,16 +75,18 @@ func addInitialAssets():
 		targetFrameSize = targetFrameTexture.get_size() * targetFrame.scale
 	var targetFrameRect = Rect2(targetFrame.get_global_transform().origin - targetFrameSize / 2, targetFrameSize)
 
-
 	var ui_rects_to_avoid = [timeLabelRect, targetDisplayRect, targetFrameRect]
 
-	for texture in textures:
+	for url in urls:
+		var texture = load(url)
 		var area = Area2D.new()
 		var object = Sprite2D.new()
 		var collision = CollisionShape2D.new()
 		var shape = RectangleShape2D.new()
 
 		object.texture = texture
+
+		# You can adjust z_index as needed
 		object.z_index = RenderingServer.CANVAS_ITEM_Z_MAX
 		area.z_index = RenderingServer.CANVAS_ITEM_Z_MAX
 
@@ -73,19 +100,35 @@ func addInitialAssets():
 		var sprite_size = shape.size
 		var margin = 20
 		var valid_position = false
+		
+		# Option B: Check against UI and already-placed objects manually
 		while not valid_position:
-			var random_position = Vector2(randf_range(sprite_size.x / 2 + margin, viewport.x - sprite_size.x / 2 - margin), randf_range(sprite_size.y / 2 + margin, viewport.y - sprite_size.y / 2 - margin))
+			var random_position = Vector2(
+				randf_range(sprite_size.x / 2 + margin, viewport.x - sprite_size.x / 2 - margin),
+				randf_range(sprite_size.y / 2 + margin, viewport.y - sprite_size.y / 2 - margin)
+			)
 			area.position = random_position
 			var area_rect = Rect2(area.global_position - sprite_size / 2, sprite_size)
 
+			# Check against UI rectangles
 			var overlaps_ui = false
 			for ui_rect in ui_rects_to_avoid:
 				if area_rect.intersects(ui_rect):
 					overlaps_ui = true
 					break
 
-			var overlapping_areas = area.get_overlapping_areas()
-			if overlapping_areas.size() == 0 and not overlaps_ui:
+			# Check against already placed objects
+			var overlaps_object = false
+			for other_object in objectsInGame:
+				# Retrieve the parent Area2D of the sprite
+				var other_area = other_object.get_parent()
+				var other_sprite_size = other_object.texture.get_size() * other_object.scale
+				var other_rect = Rect2(other_area.global_position - other_sprite_size / 2, other_sprite_size)
+				if area_rect.intersects(other_rect):
+					overlaps_object = true
+					break
+
+			if not overlaps_ui and not overlaps_object:
 				valid_position = true
 
 		collision.position = Vector2.ZERO
@@ -94,6 +137,7 @@ func addInitialAssets():
 		add_child(area)
 		objectsInGame.append(object)
 
+		# Bind the input event with additional parameters (area and object)
 		area.input_event.connect(_on_object_clicked.bind(area, object))
 
 	updateTargetDisplay()
@@ -116,7 +160,7 @@ func _on_object_clicked(viewport, event, shape_idx, area, object):
 func updateTimerLabel():
 	var secondsRemaining = ceil(time.time_left)
 
-	if ( secondsRemaining <= 9):
+	if (secondsRemaining <= 9):
 		timeLabel.text = "0:0" + str(secondsRemaining)
 		return
 
@@ -125,7 +169,7 @@ func updateTimerLabel():
 		return
 
 	secondsRemaining -= 60
-	if ( secondsRemaining <= 9 ):
+	if (secondsRemaining <= 9):
 		timeLabel.text = "1:0" + str(secondsRemaining)
 		return
 

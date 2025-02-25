@@ -18,6 +18,47 @@ var textures = [
 	preload("res://images/Muzamani/prisonfood.png"),
 ]
 
+# A list of all the hidden objects' textures
+var urls = [
+	"res://images/Andy/lantern.png",
+	"res://images/Andy/map.png",
+	"res://images/Andy/scroll.png",
+	"res://images/Andy/ship.png",
+	"res://images/Andy/skull.png",
+	"res://images/Andy/sword.png",
+	"res://images/Andy/treasure.png",
+	"res://images/Garrison/amulet_transparent.png",
+	"res://images/Garrison/apple_transparent.png",
+	"res://images/Garrison/bandana_transparent.png",
+	"res://images/Garrison/blueprint_transparent.png",
+	"res://images/Garrison/cannonball_transparent.png",
+	"res://images/Garrison/dagger_transparent.png",
+	"res://images/Garrison/diamond_transparent.png",
+	"res://images/Garrison/doubloon_transparent.png",
+	"res://images/Garrison/elixir_transparent.png",
+	"res://images/Garrison/fools_gold_transparent.png",
+	"res://images/Garrison/golden_apple_transparent.png",
+	"res://images/Garrison/key_transparent.png",
+	"res://images/Garrison/map_transparent.png",
+	"res://images/Garrison/marbles_transparent.png",
+	"res://images/Garrison/pearl_transparent.png",
+	"res://images/Garrison/pineapple_transparent.png",
+	"res://images/Garrison/pistol_transparent.png",
+	"res://images/Garrison/poisoned_rum_transparent.png",
+	"res://images/Garrison/rotten_apple_transparent.png",
+	"res://images/Garrison/rotten_pineapple_transparent.png",
+	"res://images/Garrison/ruby_transparent.png",
+	"res://images/Garrison/rum_transparent.png",
+	"res://images/Garrison/sapphire_transparent.png",
+	"res://images/Garrison/silver_transparent.png",
+	"res://images/Garrison/sword_transparent.png",
+	"res://images/Garrison/treasure_chest_closed_transparent.png",
+	"res://images/Garrison/treasure_chest_transparent.png",
+	"res://images/Muzamani/birdcage_transparent.png",
+	"res://images/Muzamani/brigmap_transparent.png",
+	"res://images/Muzamani/brigpistol_transparent.png",
+]
+
 # The objects that are currently in-game
 var objectsInGame = []
 
@@ -159,4 +200,5 @@ func handleLoss():
 func handleWin():
 	gameWonLabel.show()
 	handleEnd()
+	get_tree().change_scene_to_file("res://scenes/Garrison/level_garrison.tscn")
 	

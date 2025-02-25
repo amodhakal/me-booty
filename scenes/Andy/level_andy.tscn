@@ -22,6 +22,7 @@ script = ExtResource("1_koisx")
 process_callback = 0
 wait_time = 90.0
 one_shot = true
+autostart = true
 
 [node name="Background" type="TextureRect" parent="."]
 offset_left = -16.0
