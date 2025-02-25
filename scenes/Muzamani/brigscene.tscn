@@ -20,8 +20,9 @@ script = ExtResource("1_eyg23")
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
-wait_time = 90.0
+wait_time = 75.0
 one_shot = true
+autostart = true
 
 [node name="TheBrig" type="TextureRect" parent="."]
 offset_top = -2.0

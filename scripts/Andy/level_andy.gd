@@ -40,6 +40,16 @@ var urls = [
 	"res://images/Garrison/sapphire_transparent.png",
 	"res://images/Garrison/silver_transparent.png",
 	"res://images/Garrison/sword_transparent.png",
+	"res://images/Garrison/treasure_chest_closed_transparent.png",
+	"res://images/Garrison/treasure_chest_transparent.png",
+	"res://images/Muzamani/birdcage_transparent.png",
+	"res://images/Muzamani/brigmap_transparent.png",
+	"res://images/Muzamani/brigpistol_transparent.png",
+	"res://images/Muzamani/compass_transparent.png",
+	"res://images/Muzamani/eyepatch_transparent.png",
+	"res://images/Muzamani/goldoubloons_transparent.png",
+	"res://images/Muzamani/pirateflag_transparent.png",
+	"res://images/Muzamani/prisonfood_transparent.png"
 ]
 
 # The objects that are currently in-game (stores Sprite2D nodes)
@@ -55,6 +65,8 @@ func _ready() -> void:
 	print("Andy's level reached")
 	gameWonLabel.hide()
 	addInitialAssets()
+	
+
 
 func _process(delta: float) -> void:
 	updateTimerLabel()
@@ -206,4 +218,4 @@ func handleWin():
 	# Show to the next level or something
 	gameWonLabel.show()
 	handleEnd()
-	get_tree().change_scene_to_file("res://scenes/Muzamani/brigscene.tscn")
+	get_tree().change_scene_to_file("res://scenes/Garrison/level_garrison.tscn")
