@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmvgfkv8ug2v1"
-path="res://.godot/imported/pistol.png-19ed9bf741fb882c7461a2d3405f67f6.ctex"
+path="res://.godot/imported/pistol.png-1a3f148c057dfc10878faa9e6512c739.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://images/pistol.png"
-dest_files=["res://.godot/imported/pistol.png-19ed9bf741fb882c7461a2d3405f67f6.ctex"]
+dest_files=["res://.godot/imported/pistol.png-1a3f148c057dfc10878faa9e6512c739.ctex"]
 
 [params]
 

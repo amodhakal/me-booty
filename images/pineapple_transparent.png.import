@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c548exskd6t4q"
-path="res://.godot/imported/pineapple_transparent.png-f72037ea8bd09681e95ef10b1e4b98c5.ctex"
+path="res://.godot/imported/pineapple_transparent.png-3702e92ba29145f1c6b9fb7fd6d98c1b.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://images/pineapple_transparent.png"
-dest_files=["res://.godot/imported/pineapple_transparent.png-f72037ea8bd09681e95ef10b1e4b98c5.ctex"]
+dest_files=["res://.godot/imported/pineapple_transparent.png-3702e92ba29145f1c6b9fb7fd6d98c1b.ctex"]
 
 [params]
 

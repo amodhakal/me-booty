@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cs5mmxeavty7m"
-path="res://.godot/imported/rotten_pineapple_transparent.png-40a5893a88e41065435bd94a0331d825.ctex"
+path="res://.godot/imported/rotten_pineapple_transparent.png-b99c80f4b1fe344a785322aba00ade29.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://images/rotten_pineapple_transparent.png"
-dest_files=["res://.godot/imported/rotten_pineapple_transparent.png-40a5893a88e41065435bd94a0331d825.ctex"]
+dest_files=["res://.godot/imported/rotten_pineapple_transparent.png-b99c80f4b1fe344a785322aba00ade29.ctex"]
 
 [params]
 

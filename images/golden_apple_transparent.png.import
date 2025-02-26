@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://283y87ryr0j0"
-path="res://.godot/imported/golden_apple_transparent.png-cec309793681132687301bda87ea0636.ctex"
+path="res://.godot/imported/golden_apple_transparent.png-a116ab0d6a3f07648890271895c27c45.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://images/golden_apple_transparent.png"
-dest_files=["res://.godot/imported/golden_apple_transparent.png-cec309793681132687301bda87ea0636.ctex"]
+dest_files=["res://.godot/imported/golden_apple_transparent.png-a116ab0d6a3f07648890271895c27c45.ctex"]
 
 [params]
 

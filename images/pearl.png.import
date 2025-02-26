@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cx44inv0f4p4r"
-path="res://.godot/imported/pearl.png-e918d6ac6f126e97005dbff38f17f24f.ctex"
+path="res://.godot/imported/pearl.png-bec0af6bcea880e7dd1bc9567193f510.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://images/pearl.png"
-dest_files=["res://.godot/imported/pearl.png-e918d6ac6f126e97005dbff38f17f24f.ctex"]
+dest_files=["res://.godot/imported/pearl.png-bec0af6bcea880e7dd1bc9567193f510.ctex"]
 
 [params]
 

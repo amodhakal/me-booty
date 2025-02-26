@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2mq1ib1f5s2i"
-path="res://.godot/imported/amulet_transparent.png-3772601e1d6035379344cca94aadd3b4.ctex"
+path="res://.godot/imported/amulet_transparent.png-65eb79bd98909fd69596b7ba5c5c7e43.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://images/amulet_transparent.png"
-dest_files=["res://.godot/imported/amulet_transparent.png-3772601e1d6035379344cca94aadd3b4.ctex"]
+dest_files=["res://.godot/imported/amulet_transparent.png-65eb79bd98909fd69596b7ba5c5c7e43.ctex"]
 
 [params]
 

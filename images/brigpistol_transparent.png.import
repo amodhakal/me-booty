@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlobha3257sei"
-path="res://.godot/imported/brigpistol_transparent.png-b89356af74583daf34bf06a4e95f07f5.ctex"
+path="res://.godot/imported/brigpistol_transparent.png-cdf443179fbd9a40e2b00f8ebbb309e3.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://images/brigpistol_transparent.png"
-dest_files=["res://.godot/imported/brigpistol_transparent.png-b89356af74583daf34bf06a4e95f07f5.ctex"]
+dest_files=["res://.godot/imported/brigpistol_transparent.png-cdf443179fbd9a40e2b00f8ebbb309e3.ctex"]
 
 [params]
 

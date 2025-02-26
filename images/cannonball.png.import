@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlwrylv1jllb7"
-path="res://.godot/imported/cannonball.png-03934ab08af4ef10d219c5d0eb6b9026.ctex"
+path="res://.godot/imported/cannonball.png-5f3dbd8f6b5267921c945c663f725aa7.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://images/cannonball.png"
-dest_files=["res://.godot/imported/cannonball.png-03934ab08af4ef10d219c5d0eb6b9026.ctex"]
+dest_files=["res://.godot/imported/cannonball.png-5f3dbd8f6b5267921c945c663f725aa7.ctex"]
 
 [params]
 

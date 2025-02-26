@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfjxjxkrjxoyt"
-path="res://.godot/imported/doubloon_transparent.png-a55a543f399c156c4f3993d60af06f26.ctex"
+path="res://.godot/imported/doubloon_transparent.png-366882e11d372d388a80f90bbe67daf9.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://images/doubloon_transparent.png"
-dest_files=["res://.godot/imported/doubloon_transparent.png-a55a543f399c156c4f3993d60af06f26.ctex"]
+dest_files=["res://.godot/imported/doubloon_transparent.png-366882e11d372d388a80f90bbe67daf9.ctex"]
 
 [params]
 

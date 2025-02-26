@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6jxbma486log"
-path="res://.godot/imported/apple.png-5fe38e015c3931ff53621e86ec1587ef.ctex"
+path="res://.godot/imported/apple.png-9d307a35cbd06ba9b8858e9385ea2456.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://images/apple.png"
-dest_files=["res://.godot/imported/apple.png-5fe38e015c3931ff53621e86ec1587ef.ctex"]
+dest_files=["res://.godot/imported/apple.png-9d307a35cbd06ba9b8858e9385ea2456.ctex"]
 
 [params]
 

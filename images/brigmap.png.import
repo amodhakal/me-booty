@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://caoj52wted2e7"
-path="res://.godot/imported/brigmap.png-1a0a12a441891569367245b27b271984.ctex"
+path="res://.godot/imported/brigmap.png-8fedcd1a9e5e62023956141057721490.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://images/brigmap.png"
-dest_files=["res://.godot/imported/brigmap.png-1a0a12a441891569367245b27b271984.ctex"]
+dest_files=["res://.godot/imported/brigmap.png-8fedcd1a9e5e62023956141057721490.ctex"]
 
 [params]
 

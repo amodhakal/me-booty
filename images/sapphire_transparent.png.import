@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://boccrr5reauuy"
-path="res://.godot/imported/sapphire_transparent.png-6dcedd5dbafde1f26225075ea580693c.ctex"
+path="res://.godot/imported/sapphire_transparent.png-5f29f858d916b4ef5662e72ff58a819a.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://images/sapphire_transparent.png"
-dest_files=["res://.godot/imported/sapphire_transparent.png-6dcedd5dbafde1f26225075ea580693c.ctex"]
+dest_files=["res://.godot/imported/sapphire_transparent.png-5f29f858d916b4ef5662e72ff58a819a.ctex"]
 
 [params]
 

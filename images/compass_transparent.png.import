@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://p604pqmfwqe6"
-path="res://.godot/imported/compass_transparent.png-e035f44c0fc0475167f0d4f1ec004029.ctex"
+path="res://.godot/imported/compass_transparent.png-7d4a09b54bcf825eb6c3dbd2651dbd2a.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://images/compass_transparent.png"
-dest_files=["res://.godot/imported/compass_transparent.png-e035f44c0fc0475167f0d4f1ec004029.ctex"]
+dest_files=["res://.godot/imported/compass_transparent.png-7d4a09b54bcf825eb6c3dbd2651dbd2a.ctex"]
 
 [params]
 

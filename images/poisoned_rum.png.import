@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxp0thjfx4fcv"
-path="res://.godot/imported/poisoned_rum.png-bfbdeb8a1817259071ddccdf7f6dad7a.ctex"
+path="res://.godot/imported/poisoned_rum.png-2395fd8aebb11fc95624c2a869bcbcb7.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://images/poisoned_rum.png"
-dest_files=["res://.godot/imported/poisoned_rum.png-bfbdeb8a1817259071ddccdf7f6dad7a.ctex"]
+dest_files=["res://.godot/imported/poisoned_rum.png-2395fd8aebb11fc95624c2a869bcbcb7.ctex"]
 
 [params]
 

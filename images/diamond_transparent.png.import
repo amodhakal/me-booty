@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://v5d2kmjv3c1e"
-path="res://.godot/imported/diamond_transparent.png-ca54babf062879f9bae4b7855b12e2f8.ctex"
+path="res://.godot/imported/diamond_transparent.png-d53d916da385a8ea1e648c7a8b8dd026.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://images/diamond_transparent.png"
-dest_files=["res://.godot/imported/diamond_transparent.png-ca54babf062879f9bae4b7855b12e2f8.ctex"]
+dest_files=["res://.godot/imported/diamond_transparent.png-d53d916da385a8ea1e648c7a8b8dd026.ctex"]
 
 [params]
 

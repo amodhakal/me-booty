@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2ulo0ibivrfd"
-path="res://.godot/imported/bandana_transparent.png-0454f3e6e55f97fcbf4d6dbbc9cf0fb7.ctex"
+path="res://.godot/imported/bandana_transparent.png-678821d40b3d59e03582c095b7d5609f.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://images/bandana_transparent.png"
-dest_files=["res://.godot/imported/bandana_transparent.png-0454f3e6e55f97fcbf4d6dbbc9cf0fb7.ctex"]
+dest_files=["res://.godot/imported/bandana_transparent.png-678821d40b3d59e03582c095b7d5609f.ctex"]
 
 [params]
 

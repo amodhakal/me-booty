@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgfrr7fo6qp74"
-path="res://.godot/imported/eyepatch.png-714c95b299c3c424fab92281c399e5b8.ctex"
+path="res://.godot/imported/eyepatch.png-a1b722f08b37fa743c7eb8173f6a6d29.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://images/eyepatch.png"
-dest_files=["res://.godot/imported/eyepatch.png-714c95b299c3c424fab92281c399e5b8.ctex"]
+dest_files=["res://.godot/imported/eyepatch.png-a1b722f08b37fa743c7eb8173f6a6d29.ctex"]
 
 [params]
 
