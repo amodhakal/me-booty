@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 
 AudioManager="*res://autoload/AudioManager.gd"
 PointManager="*res://autoload/PointManager.gd"
+Utils="*res://autoload/Utils.gd"
 
 [display]
 
