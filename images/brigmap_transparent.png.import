@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://images/Muzamani/brigmap_transparent.png"
+source_file="res://images/brigmap_transparent.png"
 dest_files=["res://.godot/imported/brigmap_transparent.png-096a9505425665d47b0d7c8db4df9f3a.ctex"]
 
 [params]

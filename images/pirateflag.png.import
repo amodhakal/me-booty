@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://images/Muzamani/pirateflag.png"
+source_file="res://images/pirateflag.png"
 dest_files=["res://.godot/imported/pirateflag.png-5e28187111673726e8c85f843f150d7a.ctex"]
 
 [params]

@@ -8,4 +8,4 @@ func _ready():
 
 func _on_restart_game_button_pressed() -> void:
 	AudioManager.restart_current_music()
-	get_tree().change_scene_to_file("res://scenes/Andy/level_andy.tscn")
+	get_tree().change_scene_to_file("res://scenes/level_andy.tscn")

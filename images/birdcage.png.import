@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://images/Muzamani/birdcage.png"
+source_file="res://images/birdcage.png"
 dest_files=["res://.godot/imported/birdcage.png-de10c16873b09be7e7ca6178c8370e83.ctex"]
 
 [params]

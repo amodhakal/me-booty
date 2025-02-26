@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://images/Muzamani/compass_transparent.png"
+source_file="res://images/compass_transparent.png"
 dest_files=["res://.godot/imported/compass_transparent.png-e035f44c0fc0475167f0d4f1ec004029.ctex"]
 
 [params]

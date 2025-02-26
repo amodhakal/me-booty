@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://images/Muzamani/prisonfood.png"
+source_file="res://images/prisonfood.png"
 dest_files=["res://.godot/imported/prisonfood.png-f0a6035a8bd2f607774a00bfaa7f0fe9.ctex"]
 
 [params]

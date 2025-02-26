@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://images/Garrison/blueprint_transparent.png"
+source_file="res://images/blueprint_transparent.png"
 dest_files=["res://.godot/imported/blueprint_transparent.png-f4e87bccb87ac7f6b307b17184c67fe2.ctex"]
 
 [params]

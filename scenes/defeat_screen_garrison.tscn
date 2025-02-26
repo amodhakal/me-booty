@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dl7f0ct40l7w5"]
 
-[ext_resource type="Script" path="res://scripts/Garrison/defeat_screen_garrison.gd" id="1_1drwc"]
-[ext_resource type="Texture2D" uid="uid://crf8sgf7bs06h" path="res://images/Garrison/armory.jpg" id="2_cef8r"]
+[ext_resource type="Script" path="res://scripts/defeat_screen_garrison.gd" id="1_1drwc"]
+[ext_resource type="Texture2D" uid="uid://crf8sgf7bs06h" path="res://images/armory.jpg" id="2_cef8r"]
 [ext_resource type="FontFile" uid="uid://c1h4k12aq4c5u" path="res://fonts/SairaStencilOne-Regular.ttf" id="3_wyh2x"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mp2rt"]

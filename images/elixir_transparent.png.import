@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://images/Garrison/elixir_transparent.png"
+source_file="res://images/elixir_transparent.png"
 dest_files=["res://.godot/imported/elixir_transparent.png-698b7b2ca75a3a5a6619c37d681694d5.ctex"]
 
 [params]

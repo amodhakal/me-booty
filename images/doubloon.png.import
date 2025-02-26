@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://images/Garrison/doubloon.png"
+source_file="res://images/doubloon.png"
 dest_files=["res://.godot/imported/doubloon.png-fa9115f38cf29b017823f494f849755b.ctex"]
 
 [params]

@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://images/Garrison/rotten_pineapple_transparent.png"
+source_file="res://images/rotten_pineapple_transparent.png"
 dest_files=["res://.godot/imported/rotten_pineapple_transparent.png-40a5893a88e41065435bd94a0331d825.ctex"]
 
 [params]

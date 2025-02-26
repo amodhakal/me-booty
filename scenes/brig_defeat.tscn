@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c7g0wfp8tycpd"]
 
-[ext_resource type="Texture2D" uid="uid://bicu8uxeu7uh3" path="res://images/Muzamani/TheBrig.png" id="1_2t40y"]
-[ext_resource type="Script" path="res://scripts/Muzamani/brig_defeat.gd" id="1_afo15"]
+[ext_resource type="Texture2D" uid="uid://bicu8uxeu7uh3" path="res://images/TheBrig.png" id="1_2t40y"]
+[ext_resource type="Script" path="res://scripts/brig_defeat.gd" id="1_afo15"]
 [ext_resource type="FontFile" uid="uid://c1h4k12aq4c5u" path="res://fonts/SairaStencilOne-Regular.ttf" id="2_veyku"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hxlif"]

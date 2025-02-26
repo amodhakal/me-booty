@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://bbnm7kcpefgto"]
 
-[ext_resource type="Script" path="res://scripts/Garrison/level_garrison.gd" id="1_qvm6f"]
-[ext_resource type="Texture2D" uid="uid://crf8sgf7bs06h" path="res://images/Garrison/armory.jpg" id="2_l3fvq"]
+[ext_resource type="Script" path="res://scripts/level_garrison.gd" id="1_qvm6f"]
+[ext_resource type="Texture2D" uid="uid://crf8sgf7bs06h" path="res://images/armory.jpg" id="2_l3fvq"]
 [ext_resource type="FontFile" uid="uid://c1h4k12aq4c5u" path="res://fonts/SairaStencilOne-Regular.ttf" id="3_qk03g"]
-[ext_resource type="Texture2D" uid="uid://2t62bdxf4rge" path="res://images/Andy/frame.png" id="4_bnm5d"]
-[ext_resource type="Texture2D" uid="uid://c4gd04h5xwh6l" path="res://images/Andy/lantern.png" id="5_c1csf"]
+[ext_resource type="Texture2D" uid="uid://2t62bdxf4rge" path="res://images/frame.png" id="4_bnm5d"]
+[ext_resource type="Texture2D" uid="uid://c4gd04h5xwh6l" path="res://images/lantern.png" id="5_c1csf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_frmj3"]
 font = ExtResource("3_qk03g")

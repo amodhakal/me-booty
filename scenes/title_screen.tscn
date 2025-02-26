@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dtmcplfinjoia"]
 
-[ext_resource type="Script" path="res://scripts/Andy/title_screen.gd" id="1_m3naa"]
-[ext_resource type="Texture2D" uid="uid://c530c3vmybcxl" path="res://images/Andy/background.jpg" id="2_5oj56"]
+[ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_m3naa"]
+[ext_resource type="Texture2D" uid="uid://c530c3vmybcxl" path="res://images/background.jpg" id="2_5oj56"]
 [ext_resource type="FontFile" uid="uid://c1h4k12aq4c5u" path="res://fonts/SairaStencilOne-Regular.ttf" id="3_3lwts"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mp2rt"]

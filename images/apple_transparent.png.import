@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://images/Garrison/apple_transparent.png"
+source_file="res://images/apple_transparent.png"
 dest_files=["res://.godot/imported/apple_transparent.png-60f68a240f473e669024939b836ed09b.ctex"]
 
 [params]

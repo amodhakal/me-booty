@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://d0wqhj2kbuc5t"]
 
-[ext_resource type="Script" path="res://scripts/Muzamani/brigscene.gd" id="1_eyg23"]
-[ext_resource type="Texture2D" uid="uid://bicu8uxeu7uh3" path="res://images/Muzamani/TheBrig.png" id="1_fmu1h"]
-[ext_resource type="Texture2D" uid="uid://c4gd04h5xwh6l" path="res://images/Andy/lantern.png" id="2_ukvxc"]
-[ext_resource type="Texture2D" uid="uid://2t62bdxf4rge" path="res://images/Andy/frame.png" id="3_ny22f"]
+[ext_resource type="Script" path="res://scripts/brigscene.gd" id="1_eyg23"]
+[ext_resource type="Texture2D" uid="uid://bicu8uxeu7uh3" path="res://images/TheBrig.png" id="1_fmu1h"]
+[ext_resource type="Texture2D" uid="uid://c4gd04h5xwh6l" path="res://images/lantern.png" id="2_ukvxc"]
+[ext_resource type="Texture2D" uid="uid://2t62bdxf4rge" path="res://images/frame.png" id="3_ny22f"]
 [ext_resource type="FontFile" uid="uid://c1h4k12aq4c5u" path="res://fonts/SairaStencilOne-Regular.ttf" id="4_j0712"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_y6ejy"]

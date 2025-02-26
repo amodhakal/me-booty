@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://images/Muzamani/eyepatch.png"
+source_file="res://images/eyepatch.png"
 dest_files=["res://.godot/imported/eyepatch.png-714c95b299c3c424fab92281c399e5b8.ctex"]
 
 [params]
