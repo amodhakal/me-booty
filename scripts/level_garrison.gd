@@ -5,25 +5,24 @@ extends Node2D
 @onready var targetDisplay = $TargetDisplay
 @onready var targetFrame = $Frame
 
-# The objects that are currently in-game (stores Sprite2D nodes)
 var objectsInGame = []
-
-# Current target index
 var targetIndex = 0
 
-# Maximum sprite size
 const MAX_IMAGE_SIZE = Vector2(60, 60)
+const NEXT_SCENE = "res://scenes/brigscene.tscn"
+const LOSS_SCENE = "res://scenes/defeat_screen_garrison.tscn"
+const MULTIPLYER = 20
 
 func _ready() -> void:
 	var timeLabelRect = Rect2(timeLabel.get_global_transform().origin, timeLabel.size)
 	var targetDisplayRect = Rect2(targetDisplay.get_global_transform().origin, targetDisplay.size)
-
 	var targetFrameTexture = targetFrame.texture
 	var targetFrameSize = Vector2.ZERO
-	if targetFrameTexture: # Check if texture is loaded
-		targetFrameSize = targetFrameTexture.get_size() * targetFrame.scale
-	var targetFrameRect = Rect2(targetFrame.get_global_transform().origin - targetFrameSize / 2, targetFrameSize)
 
+	if targetFrameTexture:
+		targetFrameSize = targetFrameTexture.get_size() * targetFrame.scale
+
+	var targetFrameRect = Rect2(targetFrame.get_global_transform().origin - targetFrameSize / 2, targetFrameSize)
 	var ui_rects_to_avoid = [timeLabelRect, targetDisplayRect, targetFrameRect]
 
 	for url in Utils.getTextureURLS():
@@ -34,13 +33,12 @@ func _ready() -> void:
 		var shape = RectangleShape2D.new()
 
 		object.texture = texture
-
-		# You can adjust z_index as needed
 		object.z_index = RenderingServer.CANVAS_ITEM_Z_MAX
 		area.z_index = RenderingServer.CANVAS_ITEM_Z_MAX
 
 		var texture_size = object.texture.get_size()
 		var scale_factor = min(MAX_IMAGE_SIZE.x / texture_size.x, MAX_IMAGE_SIZE.y / texture_size.y)
+
 		object.scale = Vector2(scale_factor, scale_factor)
 		shape.size = object.texture.get_size() * scale_factor
 		collision.shape = shape
@@ -50,26 +48,23 @@ func _ready() -> void:
 		var margin = 20
 		var valid_position = false
 		
-		# Option B: Check against UI and already-placed objects manually
 		while not valid_position:
 			var random_position = Vector2(
 				randf_range(sprite_size.x / 2 + margin, viewport.x - sprite_size.x / 2 - margin),
 				randf_range(sprite_size.y / 2 + margin, viewport.y - sprite_size.y / 2 - margin)
 			)
+
 			area.position = random_position
 			var area_rect = Rect2(area.global_position - sprite_size / 2, sprite_size)
 
-			# Check against UI rectangles
 			var overlaps_ui = false
 			for ui_rect in ui_rects_to_avoid:
 				if area_rect.intersects(ui_rect):
 					overlaps_ui = true
 					break
 
-			# Check against already placed objects
 			var overlaps_object = false
 			for other_object in objectsInGame:
-				# Retrieve the parent Area2D of the sprite
 				var other_area = other_object.get_parent()
 				var other_sprite_size = other_object.texture.get_size() * other_object.scale
 				var other_rect = Rect2(other_area.global_position - other_sprite_size / 2, other_sprite_size)
@@ -85,80 +80,15 @@ func _ready() -> void:
 		area.add_child(object)
 		add_child(area)
 		objectsInGame.append(object)
-
-		# Bind the input event with additional parameters (area and object)
 		area.input_event.connect(_on_object_clicked.bind(area, object))
 
-	updateTargetDisplay()
+	Utils.updateTargetDisplay(targetIndex, objectsInGame, targetFrame, timeLabel, targetDisplay, time, NEXT_SCENE, MULTIPLYER)
 
 func _process(delta: float) -> void:
-	updateTimerLabel()
+	Utils.updateTimerLabel(time, timeLabel)
 
-# Run when the timer times out, 90 seconds
 func _on_timer_timeout():
-	handleLoss()
+	Utils.handleLoss(objectsInGame, targetFrame, timeLabel, targetDisplay, time, LOSS_SCENE)
 
-# Handles clicking on objects
 func _on_object_clicked(viewport, event, shape_idx, area, object):
-	if event is InputEventMouseButton and event.pressed:
-		# Player loses if click the wrong item
-		var correctObject = objectsInGame[targetIndex]
-		if correctObject != object:
-			handleLoss()
-			return
-
-		# Choose another object
-		area.queue_free()
-		objectsInGame.erase(object)
-		updateTargetDisplay()
-
-# Update the timer label to show the remaining time
-func updateTimerLabel():
-	var secondsRemaining = ceil(time.time_left)
-
-	if (secondsRemaining <= 9):
-		timeLabel.text = "0:0" + str(secondsRemaining)
-		return
-
-	if (secondsRemaining <= 59):
-		timeLabel.text = "0:" + str(secondsRemaining)
-		return
-
-	secondsRemaining -= 60
-	if (secondsRemaining <= 9):
-		timeLabel.text = "1:0" + str(secondsRemaining)
-		return
-
-	timeLabel.text = "1:" + str(secondsRemaining)
-
-# Update the target display to show the correct object
-func updateTargetDisplay():
-	if objectsInGame.size() > 0:
-		targetDisplay.texture = objectsInGame[targetIndex].texture
-	else:
-		handleWin()
-
-# Handle end of the game
-func handleEnd():
-	for object in objectsInGame:
-		object.hide()
-
-	targetFrame.hide()
-	timeLabel.hide()
-	targetDisplay.hide()
-	time.stop()
-
-# Handle losing the game
-func handleLoss():
-	handleEnd()
-
-	for object in objectsInGame:
-		object.hide()
-		
-	get_tree().change_scene_to_file("res://scenes/defeat_screen_garrison.tscn")
-
-# Handle winning the game
-func handleWin():
-	PointManager.addPoints(ceil(time.time_left) * 20)
-	handleEnd()
-	get_tree().change_scene_to_file("res://scenes/brigscene.tscn")
+	Utils.assetClicked(viewport, event, shape_idx, area, object, objectsInGame, targetIndex, targetFrame, timeLabel, targetDisplay,time, LOSS_SCENE, NEXT_SCENE, MULTIPLYER)
