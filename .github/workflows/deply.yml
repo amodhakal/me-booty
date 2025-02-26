@@ -8,7 +8,7 @@ jobs:
   export_html5:
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:4.3-stable
+      image: barichello/godot-ci:4.3
     env:
       GODOT_PROJECT_PATH: .
       EXPORT_PRESETS: "HTML5"
