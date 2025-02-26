@@ -14,6 +14,19 @@ config/name="Me Booty"
 run/main_scene="res://scenes/Andy/title_screen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
+[autoload]
+
+AudioManager="*res://autoload/AudioManager.gd"
+
 [display]
 
 window/stretch/mode="viewport"
+
+[editor]
+
+version_control/autoload_on_startup=true
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
