@@ -5,7 +5,7 @@ on: push
 env:
   GODOT_VERSION: 4.3
   EXPORT_NAME: me-booty
-  PROJECT_PATH: me-booty
+  PROJECT_PATH: .
 
 jobs:
   export-web:
