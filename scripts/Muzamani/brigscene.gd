@@ -212,5 +212,6 @@ func handleLoss():
 
 # Handle winning the game
 func handleWin():
-	get_tree().change_scene_to_file("res://scenes/Andy/Win.tscn")
+	PointManager.addPoints(ceil(time.time_left) * 50)
 	handleEnd()
+	get_tree().change_scene_to_file("res://scenes/Andy/Win.tscn")

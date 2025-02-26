@@ -1,15 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://crn2tibke7vqf"]
+[gd_scene load_steps=7 format=3 uid="uid://crn2tibke7vqf"]
 
 [ext_resource type="Texture2D" uid="uid://c530c3vmybcxl" path="res://images/Andy/background.jpg" id="1_4m2xl"]
 [ext_resource type="Script" path="res://scripts/Andy/level_andy.gd" id="1_koisx"]
 [ext_resource type="FontFile" uid="uid://c1h4k12aq4c5u" path="res://fonts/SairaStencilOne-Regular.ttf" id="3_l2nl6"]
 [ext_resource type="Texture2D" uid="uid://2t62bdxf4rge" path="res://images/Andy/frame.png" id="3_y1qag"]
 [ext_resource type="Texture2D" uid="uid://c4gd04h5xwh6l" path="res://images/Andy/lantern.png" id="3_ylqfb"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_ssf1s"]
-font_size = 56
-font_color = Color(1, 0, 0, 1)
-outline_size = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_frmj3"]
 font = ExtResource("3_l2nl6")
@@ -31,14 +26,6 @@ offset_right = 1172.0
 offset_bottom = 662.0
 texture = ExtResource("1_4m2xl")
 expand_mode = 2
-
-[node name="GameWonLabel" type="Label" parent="."]
-offset_right = 1146.0
-offset_bottom = 641.0
-text = "You won!!!"
-label_settings = SubResource("LabelSettings_ssf1s")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Frame" type="Sprite2D" parent="."]
 position = Vector2(76.1249, 153)

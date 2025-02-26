@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c07q5qplw5nqm"]
+[gd_scene load_steps=6 format=3 uid="uid://c07q5qplw5nqm"]
 
 [ext_resource type="Script" path="res://scripts/Andy/win.gd" id="1_30fn3"]
 [ext_resource type="Texture2D" uid="uid://bicu8uxeu7uh3" path="res://images/Muzamani/TheBrig.png" id="2_ndn72"]
@@ -10,6 +10,11 @@ font_size = 78
 font_color = Color(0, 0.550229, 0.919196, 1)
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ikrba"]
+font = ExtResource("3_1mfnr")
+font_size = 32
+font_color = Color(0.918649, 0.867879, 0.895651, 1)
 
 [node name="Win" type="Node2D"]
 script = ExtResource("1_30fn3")
@@ -31,3 +36,12 @@ text = "You win"
 label_settings = SubResource("LabelSettings_hxlif")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Points" type="Label" parent="."]
+offset_left = 3.0
+offset_top = 363.0
+offset_right = 1151.0
+offset_bottom = 415.0
+text = "You won 00 points!"
+label_settings = SubResource("LabelSettings_ikrba")
+horizontal_alignment = 1

@@ -1,15 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbnm7kcpefgto"]
+[gd_scene load_steps=7 format=3 uid="uid://bbnm7kcpefgto"]
 
 [ext_resource type="Script" path="res://scripts/Garrison/level_garrison.gd" id="1_qvm6f"]
 [ext_resource type="Texture2D" uid="uid://crf8sgf7bs06h" path="res://images/Garrison/armory.jpg" id="2_l3fvq"]
 [ext_resource type="FontFile" uid="uid://c1h4k12aq4c5u" path="res://fonts/SairaStencilOne-Regular.ttf" id="3_qk03g"]
 [ext_resource type="Texture2D" uid="uid://2t62bdxf4rge" path="res://images/Andy/frame.png" id="4_bnm5d"]
 [ext_resource type="Texture2D" uid="uid://c4gd04h5xwh6l" path="res://images/Andy/lantern.png" id="5_c1csf"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_ssf1s"]
-font_size = 56
-font_color = Color(1, 0, 0, 1)
-outline_size = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_frmj3"]
 font = ExtResource("3_qk03g")
@@ -31,14 +26,6 @@ offset_right = 1172.0
 offset_bottom = 662.0
 texture = ExtResource("2_l3fvq")
 expand_mode = 2
-
-[node name="GameWonLabel" type="Label" parent="."]
-offset_right = 1146.0
-offset_bottom = 641.0
-text = "You won!!!"
-label_settings = SubResource("LabelSettings_ssf1s")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="TimerLabel" type="Label" parent="."]
 offset_left = 29.0

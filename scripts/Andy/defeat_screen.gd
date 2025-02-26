@@ -4,6 +4,7 @@ extends Node2D
 
 func _ready():
 	AudioManager.play_defeat_music()
+	PointManager.addPoints(-200)
 
 func _on_restart_game_button_pressed() -> void:
 	AudioManager.restart_current_music()

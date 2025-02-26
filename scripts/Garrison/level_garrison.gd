@@ -4,7 +4,6 @@ extends Node2D
 @onready var timeLabel = $TimerLabel
 @onready var targetDisplay = $TargetDisplay
 @onready var targetFrame = $Frame
-@onready var gameWonLabel = $GameWonLabel
 
 # A list of all the hidden objects' textures
 var urls = [
@@ -62,7 +61,6 @@ var targetIndex = 0
 const MAX_IMAGE_SIZE = Vector2(60, 60)
 
 func _ready() -> void:
-	gameWonLabel.hide()
 	addInitialAssets()
 	
 
@@ -214,6 +212,6 @@ func handleLoss():
 
 # Handle winning the game
 func handleWin():
-	gameWonLabel.show()
+	PointManager.addPoints(ceil(time.time_left) * 20)
 	handleEnd()
 	get_tree().change_scene_to_file("res://scenes/Muzamani/brigscene.tscn")
