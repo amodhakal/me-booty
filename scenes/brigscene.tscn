@@ -48,3 +48,5 @@ offset_bottom = 184.0
 texture = ExtResource("2_ukvxc")
 expand_mode = 3
 stretch_mode = 4
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

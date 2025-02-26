@@ -13,13 +13,10 @@ const LOSS_SCENE = "res://scenes/defeat_screen.tscn"
 const MULTIPLYER = 10
 
 func _ready() -> void:
-	Utils.generateAssets(timeLabel, targetDisplay, targetFrame, get_viewport_rect(), objectsInGame, objectClicked, targetIndex, time, NEXT_SCENE, MULTIPLYER)
+	Utils.generateAssets(timeLabel, targetDisplay, targetFrame, get_viewport_rect(), objectsInGame, targetIndex, time, LOSS_SCENE, NEXT_SCENE, MULTIPLYER)
 
 func _process(delta: float) -> void:
 	Utils.updateTimerLabel(time, timeLabel)
 
 func _on_timer_timeout():
 	Utils.handleLoss(objectsInGame, targetFrame, timeLabel, targetDisplay, time, LOSS_SCENE)
-
-func objectClicked(viewport, event, shape_idx, area, object):
-	Utils.assetClicked(viewport, event, shape_idx, area, object, objectsInGame, targetIndex, targetFrame, timeLabel, targetDisplay,time, LOSS_SCENE, NEXT_SCENE, MULTIPLYER)

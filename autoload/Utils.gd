@@ -50,7 +50,10 @@ func getTextureURLS():
 	urls.shuffle()
 	return urls
 	
-func generateAssets(timeLabel, targetDisplay, targetFrame, viewportRect, objectsInGame, objectClicked, targetIndex, time, nextScene, multiplyer):
+func generateAssets(timeLabel, targetDisplay, targetFrame, viewportRect, objectsInGame, targetIndex, time, lossScene, nextScene, multiplyer):
+	var objectClicked = func(viewport, event, shape_idx, area, object):
+		assetClicked(viewport, event, shape_idx, area, object, objectsInGame, targetIndex, targetFrame, timeLabel, targetDisplay,time, lossScene, nextScene, multiplyer)
+
 	var timeLabelRect = Rect2(timeLabel.get_global_transform().origin, timeLabel.size)
 	var targetDisplayRect = Rect2(targetDisplay.get_global_transform().origin, targetDisplay.size)
 	var targetFrameTexture = targetFrame.texture
@@ -62,7 +65,7 @@ func generateAssets(timeLabel, targetDisplay, targetFrame, viewportRect, objects
 	var targetFrameRect = Rect2(targetFrame.get_global_transform().origin - targetFrameSize / 2, targetFrameSize)
 	var ui_rects_to_avoid = [timeLabelRect, targetDisplayRect, targetFrameRect]
 
-	for url in Utils.getTextureURLS():
+	for url in getTextureURLS():
 		var texture = load(url)
 		var area = Area2D.new()
 		var object = Sprite2D.new()
@@ -119,7 +122,7 @@ func generateAssets(timeLabel, targetDisplay, targetFrame, viewportRect, objects
 		objectsInGame.append(object)
 		area.input_event.connect(objectClicked.bind(area, object))
 
-	Utils.updateTargetDisplay(targetIndex, objectsInGame, targetFrame, timeLabel, targetDisplay, time, nextScene, multiplyer)
+	updateTargetDisplay(targetIndex, objectsInGame, targetFrame, timeLabel, targetDisplay, time, nextScene, multiplyer)
 
 	
 func assetClicked(viewport, event, shape_idx, area, object, objectsInGame, targetIndex, targetFrame, timeLabel, targetDisplay,time, lossScene, winScene, multiplyer):
