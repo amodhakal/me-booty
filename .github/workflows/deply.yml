@@ -2,26 +2,23 @@ name: Deploy Godot Game with Github Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
-  build:
+  export_html5:
     runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:4.3-stable
+    env:
+      GODOT_PROJECT_PATH: .
+      EXPORT_PRESETS: "HTML5"
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v3
-      - name: Set up Godot 4.3
-        uses: firebelley/godot-builder@v2
+        run: godot-ci export
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v3
         with:
-          godot_version: "4.3"
-          export_platform: "HTML5"
-      - name: Export project for HTML5
-        run: godot --export "HTML5" build.zip
-      - name: Unzip export
-        run: unzip -q build.zip -d build
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          name: html5-build
+          path: build
