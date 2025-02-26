@@ -2,7 +2,6 @@ extends Node
 
 var urls = [
 	"res://images/lantern.png",
-	"res://images/map.png",
 	"res://images/scroll.png",
 	"res://images/ship.png",
 	"res://images/skull.png",
@@ -50,7 +49,7 @@ func getTextureURLS():
 	urls.shuffle()
 	return urls
 	
-func generateAssets(timeLabel, targetDisplay, targetFrame, viewportRect, objectsInGame, targetIndex, time, lossScene, nextScene, multiplyer):
+func generateAssets(timeLabel, targetDisplay, targetFrame, viewportRect, objectsInGame, targetIndex, time, lossScene, nextScene, multiplyer, percentage):
 	var objectClicked = func(viewport, event, shape_idx, area, object):
 		assetClicked(viewport, event, shape_idx, area, object, objectsInGame, targetIndex, targetFrame, timeLabel, targetDisplay,time, lossScene, nextScene, multiplyer)
 
@@ -64,8 +63,9 @@ func generateAssets(timeLabel, targetDisplay, targetFrame, viewportRect, objects
 		
 	var targetFrameRect = Rect2(targetFrame.get_global_transform().origin - targetFrameSize / 2, targetFrameSize)
 	var ui_rects_to_avoid = [timeLabelRect, targetDisplayRect, targetFrameRect]
-
-	for url in getTextureURLS():
+	var urls = getTextureURLS()	
+	
+	for url in urls.slice(0, int(urls.size() * percentage)):
 		var texture = load(url)
 		var area = Area2D.new()
 		var object = Sprite2D.new()
