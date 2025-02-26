@@ -12,34 +12,20 @@ func _ready():
 	music_player.connect("finished", Callable(self, "_on_music_finished"))
 
 func play_main_music():
-	if current_track != "main":
-		current_track = "main"
-		music_player.stream = main_music
-		music_player.play()
+	current_track = "main"
+	music_player.stream = main_music
+	music_player.play()
 
 func play_defeat_music():
-	if current_track != "defeat":
-		current_track = "defeat"
-		music_player.stream = defeat_music
-		music_player.play()
+	current_track = "defeat"
+	music_player.stream = defeat_music
+	music_player.play()
 		
 func play_win_music():
-	if current_track != "win":
-		current_track = "win"
-		music_player.stream = win_music
-		music_player.play()
-
-func stop_music():
-	music_player.stop()
-	current_track = ""
-
-func restart_current_music():
-	music_player.stop()
-	play_main_music()
+	current_track = "win"
+	music_player.stream = win_music
+	music_player.play()
 
 func _on_music_finished():
-	if current_track == "win":
-		return
-		
-	if current_track != "":
+	if current_track == "main":
 		music_player.play()

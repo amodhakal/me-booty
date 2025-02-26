@@ -7,5 +7,5 @@ func _ready():
 	PointManager.addPoints(-100)
 
 func _on_restart_game_button_pressed() -> void:
-	AudioManager.restart_current_music()
+	AudioManager.play_main_music()
 	get_tree().change_scene_to_file("res://scenes/level_garrison.tscn")
